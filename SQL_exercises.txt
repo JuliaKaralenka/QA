@@ -1,0 +1,67 @@
+1. Find the model number, speed and hard drive capacity for all the PCs with prices below $500.
+Result set: model, speed, hd.
+
+SELECT model, speed, hd FROM pc
+WHERE Price < 500;
+
+Right.
+The result of Your query:
+model	speed	hd
+1232	500	10.0
+1232	450	8.0
+1232	450	10.0
+1260	500	10.0
+-------------------------------------------------------------------------------------------------------
+
+2. List all printer makers. Result set: maker.
+
+SELECT DISTINCT maker FROM Product
+WHERE type = 'printer';
+
+Right.
+The result of Your query:
+maker
+A
+D
+E
+---------------------------------------------------------------------------------------------------------
+
+3. Find the model number, RAM and screen size of the laptops with prices over $1000.
+
+SELECT model, ram, screen
+FROM laptop
+WHERE price > 1000;
+
+Right.
+The result of Your query:
+model	ram	screen
+1750	128	14
+1298	64	15
+1752	128	14
+---------------------------------------------------------------------------------------------------------
+
+4. Find all records from the Printer table containing data about color printers.
+
+SELECT * FROM Printer
+WHERE color = 'y';
+
+Right.
+The result of Your query:
+code	model	color	type	price
+3	1434	y	Jet	290.0000
+2	1433	y	Jet	270.0000
+---------------------------------------------------------------------------------------------------------
+
+5. Find the model number, speed and hard drive capacity of PCs cheaper than $600 having a 12x or a 24x CD drive.
+
+SELECT DISTINCT model, speed, hd
+FROM pc
+WHERE price < 600 AND (cd = '12x' OR cd = '24x');
+
+Right.
+The result of Your query:
+model	speed	hd
+1232	450	8.0
+1232	450	10.0
+1232	500	10.0
+1260	500	10.0
