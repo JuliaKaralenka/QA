@@ -65,3 +65,44 @@ model	speed	hd
 1232	450	10.0
 1232	500	10.0
 1260	500	10.0
+----------------------------------------------------------------------------------------------------------
+
+6. For each maker producing laptops with a hard drive capacity of 10 Gb or higher, find the speed of such laptops. Result set: maker, speed.
+
+SELECT DISTINCT product.maker, laptop.speed
+FROM Product
+JOIN laptop ON product.model = laptop.model
+WHERE hd >=10
+
+Right.
+The result of Your query:
+maker	speed
+A	450
+A	600
+A	750
+B	750
+----------------------------------------------------------------------------------------------------------
+
+7. Get the models and prices for all commercially available products (of any type) produced by maker B.
+
+SELECT laptop.model, laptop.price
+FROM product
+JOIN laptop ON product.model=laptop.model
+WHERE product.maker='B'
+UNION
+SELECT pc.model, pc.price
+FROM product
+JOIN pc ON product.model=pc.model
+WHERE product.maker='B'
+UNION
+SELECT printer.model, printer.price
+FROM product
+JOIN printer ON product.model=printer.model
+WHERE product.maker='B'
+
+Right.
+The result of Your query:
+model	price
+1121	850.0000
+1750	1200.0000
+-----------------------------------------------------------------------------------------------------------
